@@ -291,6 +291,17 @@ so: [https://www.contentful.com/help/setup-content-preview](https://www.contentf
 For the live preview the basic field tagging for the inspector mode and live updates are already implemented.
 For custom components, you can find the instructions at our [guide](https://www.contentful.com/developers/docs/tutorials/general/live-preview/).
 
+---
+
+### Domain setup
+
+To set up a custom domain from an external DNS provider, create a CNAME record pointing to the subdomain provided by either Vercel or Netlify. The subdomain can be found in the hosting provider's settings. For more information, see https://www.netlify.com/blog/2020/03/26/how-to-set-up-netlify-dns-custom-domains-cname-and-a-records/.
+
+Using isFun as DNS provider, the following steps are required:
+  - create a DNS Zone
+  - add a CNAME record with the subdomain provided by the hosting provider
+  - add a A record with the IP address provided by the hosting provider (optional)
+
 $~$
 
 ---
