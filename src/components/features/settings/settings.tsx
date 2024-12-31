@@ -77,7 +77,7 @@ export const Settings = () => {
     try {
       if (window.top?.location.href === window.location.href) {
         // Dont show the settings panel when embedded into an iframe (e.g. live preview)
-        setEnabled(true);
+        // setEnabled(true);
       }
     } catch (err) {
       // window.top.location.href is not accessable for non same origin iframes

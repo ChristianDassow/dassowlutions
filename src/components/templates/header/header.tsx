@@ -5,12 +5,22 @@ import { useTranslation } from 'next-i18next';
 
 import { CtfNavigationGql } from '@src/components/features/ctf-components/ctf-navigation/ctf-navigation-gql';
 import { Link } from '@src/components/shared/link';
-import Logo from '@src/icons/Dassowlutions.svg';
-import { HEADER_HEIGHT, HEADER_HEIGHT_MD, CONTAINER_WIDTH } from '@src/theme';
+import Logo from '@src/icons/logo_dassowlutions.svg';
+import {
+  getColorConfigFromPalette,
+  HEADER_HEIGHT,
+  HEADER_HEIGHT_MD,
+  CONTAINER_WIDTH,
+} from '@src/theme';
+
+const colorPalette = '6. Dark Gray (#313841)';
+const colorConfig = getColorConfigFromPalette(colorPalette);
 
 const useStyles = makeStyles((theme: Theme) => ({
   appbar: {
     boxShadow: '0 2px 6px #00000021',
+    backgroundColor: colorConfig.backgroundColor,
+    color: colorConfig.textColor,
   },
   toolbar: {
     height: HEADER_HEIGHT_MD,
@@ -60,7 +70,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   corporateLogo: {
     display: 'block',
     height: 'auto',
-    width: '113px',
+    width: '250px',
   },
 }));
 

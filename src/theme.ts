@@ -50,10 +50,10 @@ const colorConfigs: { [key: string]: ColorConfigInterface } = {
     backgroundColor: '#bbbbbb',
     buttonColor: 'primary',
   },
-  'palette-6. Dark Gray (#797979)': {
+  'palette-6. Dark Gray (#313841)': {
     headlineColor: '#fff',
     textColor: '#fff',
-    backgroundColor: '#797979',
+    backgroundColor: '#313841',
     buttonColor: 'secondary',
   },
 };
@@ -208,10 +208,10 @@ const colorfulTheme = createTheme({
           '#__next': {
             display: 'flex',
             flexDirection: 'column',
-          }
+          },
         },
-      }
-    }
+      },
+    },
   },
 });
 

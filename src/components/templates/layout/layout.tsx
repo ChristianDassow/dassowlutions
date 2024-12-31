@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect, ReactElement } from 'react';
 
 import { Header } from '../header';
+import { PageContainer } from '../page-container';
 
 import { CtfFooterGql } from '@src/components/features/ctf-components/ctf-footer/ctf-footer-gql';
 import { CtfMobileMenuGql } from '@src/components/features/ctf-components/ctf-mobile-menu/ctf-mobile-menu-gql';
@@ -50,8 +51,10 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
       {/* header */}
       <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} />
 
-      {/* content */}
-      <div className={classes.content}>{children}</div>
+      <PageContainer>
+        {/* content */}
+        <div className={classes.content}>{children}</div>
+      </PageContainer>
 
       {/* footer */}
       <CtfFooterGql />

@@ -132,7 +132,7 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
       style={{
         backgroundImage:
           imageStyle === 'full' && backgroundImage ? `url(${backgroundImage!})` : undefined,
-        backgroundColor: colorConfig.backgroundColor,
+        // backgroundColor: colorConfig.backgroundColor,
       }}
     >
       {imageStyle === 'partial' && backgroundImage && (

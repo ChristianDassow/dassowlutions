@@ -1,6 +1,7 @@
 import { MenuItem, Select, SvgIcon, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const useStyles = makeStyles((theme: Theme) => ({
   localeMenu: {
@@ -16,10 +17,19 @@ export const LanguageSelector = () => {
   const { locale, locales } = useRouter();
   const classes = useStyles();
   const router = useRouter();
+  const [clientLocale, setClientLocale] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    setClientLocale(locale);
+  }, [locale]);
 
   const languageNames = new Intl.DisplayNames([], {
     type: 'language',
   });
+
+  if (clientLocale === undefined) {
+    return null; // Render nothing on the first render to avoid hydration mismatch
+  }
 
   return locales && locales.length > 1 ? (
     <div className={classes.localeMenu}>
@@ -37,7 +47,7 @@ export const LanguageSelector = () => {
         </defs>
       </SvgIcon>
       <Select
-        value={locale}
+        value={clientLocale}
         onChange={event => {
           router.push({ pathname: router.pathname, query: router.query }, router.asPath, {
             locale: String(event.target.value),

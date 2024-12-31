@@ -6,6 +6,10 @@ import { NavigationFieldsFragment } from './__generated/ctf-navigation.generated
 import { getLinkDisplayText, getLinkHrefPrefix } from './utils';
 
 import { Link } from '@src/components/shared/link';
+import { getColorConfigFromPalette } from '@src/theme';
+
+const colorPalette = '6. Dark Gray (#313841)';
+const colorConfig = getColorConfigFromPalette(colorPalette);
 
 const useStyles = makeStyles((theme: Theme) => ({
   menu: {
@@ -25,6 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     lineHeight: 1.9,
     marginRight: theme.spacing(8),
     position: 'relative',
+    color: colorConfig.textColor,
 
     [theme.breakpoints.up('lg')]: {
       marginRight: theme.spacing(10),
@@ -34,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       cursor: 'pointer',
       display: 'inline-block',
       transition: 'transform 0.2s ease-in-out',
+      color: 'inherit',
     },
 
     '&:hover, &:focus, &:focus-within': {
