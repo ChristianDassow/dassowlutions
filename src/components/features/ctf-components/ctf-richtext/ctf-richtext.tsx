@@ -224,7 +224,7 @@ export const CtfRichtext = (props: CtfRichtextPropsInterface) => {
     [links],
   );
 
-  const classes = useStyles();
+  const classes = useStyles(props);
 
   const ParagraphGridContainer = useCallback(
     (containerProps: { children?: any }) => {
