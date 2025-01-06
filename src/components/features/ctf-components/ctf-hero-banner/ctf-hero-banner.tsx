@@ -111,6 +111,7 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
   const layout = useLayoutContext();
 
   const colorConfig = getColorConfigFromPalette(colorPalette || '');
+  console.log('colorConfig', colorPalette, colorConfig);
   const imageStyle = imageStyleBoolean ? 'partial' : 'full';
   const heroSize =
     heroSizeBoolean === null || heroSizeBoolean === true ? 'full_screen' : 'fixed_height';
@@ -132,7 +133,7 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
       style={{
         backgroundImage:
           imageStyle === 'full' && backgroundImage ? `url(${backgroundImage!})` : undefined,
-        // backgroundColor: colorConfig.backgroundColor,
+        backgroundColor: colorConfig.backgroundColor,
       }}
     >
       {imageStyle === 'partial' && backgroundImage && (
@@ -169,7 +170,11 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
               style={{ color: colorConfig.textColor }}
               {...inspectorMode({ fieldId: 'bodyText' })}
             >
-              <CtfRichtext {...bodyText} className={classes.body} />
+              <CtfRichtext
+                {...bodyText}
+                className={classes.body}
+                textColor={colorConfig.textColor || undefined}
+              />
             </div>
           </LayoutContext.Provider>
         )}

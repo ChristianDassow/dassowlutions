@@ -6,7 +6,7 @@ import React from 'react';
 const useStyles = makeStyles(() => ({
   pageContainerRoot: {
     width: '100%',
-    backgroundColor: '#AE809E',
+    // backgroundColor: '#AE809E',
   },
 }));
 

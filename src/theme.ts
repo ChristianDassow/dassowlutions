@@ -56,6 +56,12 @@ const colorConfigs: { [key: string]: ColorConfigInterface } = {
     backgroundColor: '#313841',
     buttonColor: 'secondary',
   },
+  'palette-8. Purple (#AE809E)': {
+    headlineColor: '#313841',
+    textColor: '#313841',
+    backgroundColor: '#AE809E',
+    buttonColor: 'secondary',
+  },
 };
 
 export const getColorConfigFromPalette = (palette: string): ColorConfigInterface => {

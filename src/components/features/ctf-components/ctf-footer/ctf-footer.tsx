@@ -21,11 +21,14 @@ import { LanguageSelector } from '@src/components/features/language-selector';
 import { Link } from '@src/components/shared/link';
 import { useContentfulContext } from '@src/contentful-context';
 // import Logo from '@src/icons/logo-tagline.svg';
-import { CONTAINER_WIDTH } from '@src/theme';
+import { getColorConfigFromPalette, CONTAINER_WIDTH } from '@src/theme';
+
+const colorPalette = '6. Dark Gray (#313841)';
+const colorConfig = getColorConfigFromPalette(colorPalette);
 
 const useStyles = makeStyles((theme: Theme) => ({
   footerContainer: {
-    backgroundColor: '#F4F4F4',
+    backgroundColor: colorConfig.backgroundColor,
   },
   footer: {
     display: 'flex',
@@ -62,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: '1.8rem',
     fontWeight: 400,
     lineHeight: 1.2,
-    color: '#1B273A',
+    color: colorConfig.textColor,
     margin: theme.spacing(0, 0, 4),
     [theme.breakpoints.up('sm')]: {
       marginBottom: theme.spacing(8),
@@ -79,7 +82,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   submenuItem: {
     '& a': {
       borderBottom: '1px solid transparent',
-      color: '#414D63',
+      color: colorConfig.textColor,
       display: 'inline-block',
       minWidth: 0,
       transition: 'border-bottom-color 0.2s ease-in-out',

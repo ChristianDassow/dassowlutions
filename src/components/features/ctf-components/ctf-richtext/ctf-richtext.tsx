@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     '& p': {
       marginBottom: theme.spacing(6),
       fontSize: '1.8rem',
-      color: '#414D63',
+      color: (props: { textColor?: string }) => props.textColor,
     },
     '& h1, h2, h3, h4, h5, h6': {
       marginBottom: theme.spacing(7),
@@ -183,6 +183,7 @@ interface CtfRichtextPropsInterface {
   className?: string;
   containerClassName?: string;
   gridClassName?: string;
+  textColor?: string;
 }
 
 const EntryHyperlink = ({ node }) => {
@@ -210,7 +211,7 @@ const EntryHyperlink = ({ node }) => {
 };
 
 export const CtfRichtext = (props: CtfRichtextPropsInterface) => {
-  const { json, links, containerClassName, gridClassName } = props;
+  const { json, links, containerClassName, gridClassName, textColor } = props;
   const layout = useLayoutContext();
 
   const entryBlocks = useMemo(
