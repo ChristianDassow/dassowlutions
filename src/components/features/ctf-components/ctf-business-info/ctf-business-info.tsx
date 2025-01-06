@@ -8,10 +8,16 @@ import React, { useMemo } from 'react';
 import { BusinessInfoFieldsFragment } from './__generated/business-info.generated';
 
 import { CtfRichtext } from '@src/components/features/ctf-components/ctf-richtext/ctf-richtext';
+import { getColorConfigFromPalette } from '@src/theme';
+
+const colorPalette = '8. Purple (#AE809E)';
+const colorConfig = getColorConfigFromPalette(colorPalette || '');
+
+console.log('colorConfig', colorPalette, colorConfig);
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    paddingBottom: theme.spacing(18),
+    // paddingBottom: theme.spacing(18),
     paddingTop: (props: BusinessInfoFieldsFragment) =>
       props.name || props.shortDescription ? 0 : theme.spacing(18),
     '& .MuiContainer-root + .ComponentInfoBlock': {
@@ -32,11 +38,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     maxWidth: '77rem',
   },
   hero: {
-    marginBottom: theme.spacing(18),
+    // marginBottom: theme.spacing(18),
     position: 'relative',
   },
   heroBg: {
-    backgroundColor: '#000',
+    backgroundColor: colorConfig.backgroundColor,
     backgroundPosition: 'center center',
     backgroundSize: 'cover',
     bottom: 0,
@@ -45,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     right: 0,
     top: 0,
     '&::before': {
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      backgroundColor: 'rgba(0, 0, 0, 0.2)',
       bottom: 0,
       content: '""',
       display: 'block',
@@ -58,7 +64,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   heroInner: {
     alignItems: 'center',
-    color: '#fff',
+    color: colorConfig.headlineColor,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
