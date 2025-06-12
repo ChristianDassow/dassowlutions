@@ -1,3 +1,6 @@
-# As soon as you are ready to go public, change the `Disallow: /` to `Allow: /`
+# Allow meta scrapper
+User-agent: facebookexternalhit
+Allow: /
+# Allow everyone else
 User-agent: *
 Allow: /
